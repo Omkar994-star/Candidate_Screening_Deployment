@@ -14,3 +14,4 @@ alembic
 pydantic
 chardet
 pypdf
+docker

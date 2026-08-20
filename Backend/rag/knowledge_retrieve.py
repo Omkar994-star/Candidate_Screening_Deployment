@@ -1,3 +1,4 @@
+import os
 from functools import lru_cache
 
 from langchain_community.vectorstores import FAISS
@@ -5,8 +6,13 @@ from langchain_ollama import OllamaEmbeddings
 
 from app.core.screening_config import VECTOR_DB_ROOT
 
+
 embeddings = OllamaEmbeddings(
-    model="mxbai-embed-large"
+    model="mxbai-embed-large",
+    base_url=os.getenv(
+        "OLLAMA_BASE_URL",
+        "http://localhost:11434"
+    )
 )
 
 @lru_cache(maxsize=None)
