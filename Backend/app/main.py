@@ -17,28 +17,19 @@ app = FastAPI(
 # CORS
 # ==========================================================
 
-FRONTEND_URL = os.getenv(
-    "FRONTEND_URL",
-    "http://localhost:3000"
-)
+FRONTEND_URL = "https://keen-amazement-production-4f9b.up.railway.app"
 
 app.add_middleware(
     CORSMiddleware,
-
     allow_origins=[
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        "https://keen-amazement-production-4f9b.up.railway.app",
-        FRONTEND_URL
+        FRONTEND_URL,
     ],
-
     allow_credentials=True,
-
     allow_methods=["*"],
-
-    allow_headers=["*"]
+    allow_headers=["*"],
 )
-
 
 # ==========================================================
 # Routers
