@@ -1,0 +1,913 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f6f8;
+  color: #222;
+}
+
+
+/* ==========================================================
+   Common
+   ========================================================== */
+
+main {
+  min-height: 100vh;
+}
+
+
+/* ==========================================================
+   Upload Page
+   ========================================================== */
+
+.upload-container {
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 24px;
+}
+
+
+.upload-card {
+  width: 100%;
+
+  max-width: 500px;
+
+  background: white;
+
+  padding: 36px;
+
+  border-radius: 12px;
+
+  border: 1px solid #ddd;
+}
+
+
+.upload-card h1 {
+  margin-top: 0;
+
+  margin-bottom: 8px;
+}
+
+
+.subtitle {
+  color: #666;
+
+  margin-bottom: 30px;
+}
+
+
+/* ==========================================================
+   Role
+   ========================================================== */
+
+.role-section,
+.upload-section {
+  margin-bottom: 24px;
+}
+
+
+.role-section label,
+.upload-section label {
+  display: block;
+
+  font-weight: 600;
+
+  margin-bottom: 8px;
+}
+
+
+.role-box {
+  padding: 12px;
+
+  background: #f1f2f4;
+
+  border: 1px solid #ddd;
+
+  border-radius: 6px;
+}
+
+
+/* ==========================================================
+   File
+   ========================================================== */
+
+input[type="file"] {
+  width: 100%;
+
+  padding: 10px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 6px;
+
+  background: white;
+}
+
+
+.file-name {
+  font-size: 14px;
+
+  color: #555;
+
+  margin-top: 8px;
+}
+
+
+/* ==========================================================
+   Buttons
+   ========================================================== */
+
+.primary-button {
+  width: 100%;
+
+  border: none;
+
+  border-radius: 6px;
+
+  padding: 13px 18px;
+
+  background: #111827;
+
+  color: white;
+
+  font-size: 15px;
+
+  cursor: pointer;
+}
+
+
+.primary-button:hover {
+  opacity: 0.9;
+}
+
+
+.primary-button:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+
+/* ==========================================================
+   Error
+   ========================================================== */
+
+.error-message {
+  margin-bottom: 20px;
+
+  padding: 12px;
+
+  border-radius: 6px;
+
+  background: #fff1f1;
+
+  color: #b42318;
+
+  border: 1px solid #f0caca;
+}
+
+
+/* ==========================================================
+   Interview Page
+   ========================================================== */
+
+.interview-page {
+  min-height: 100vh;
+
+  padding: 40px 20px;
+}
+
+
+.interview-header {
+  max-width: 800px;
+
+  margin: 0 auto 30px;
+}
+
+
+.interview-header h1 {
+  margin-bottom: 8px;
+}
+
+
+.interview-header p {
+  color: #666;
+}
+
+
+/* ==========================================================
+   Question Card
+   ========================================================== */
+
+.question-card {
+  max-width: 800px;
+
+  margin: 0 auto;
+
+  background: white;
+
+  border: 1px solid #ddd;
+
+  border-radius: 12px;
+
+  padding: 32px;
+}
+
+
+.question-progress {
+  font-size: 14px;
+
+  color: #666;
+
+  margin-bottom: 16px;
+}
+
+
+.question-meta {
+  display: flex;
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+
+.question-meta span {
+  font-size: 13px;
+
+  padding: 5px 9px;
+
+  background: #f1f2f4;
+
+  border-radius: 4px;
+}
+
+
+.question-text {
+  font-size: 22px;
+
+  line-height: 1.5;
+
+  margin-bottom: 24px;
+}
+
+
+.question-card textarea {
+  width: 100%;
+
+  resize: vertical;
+
+  padding: 14px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 6px;
+
+  font-size: 15px;
+
+  font-family: inherit;
+
+  margin-bottom: 18px;
+}
+
+
+.question-card textarea:focus {
+  outline: none;
+
+  border-color: #666;
+}
+
+
+/* ==========================================================
+   Center Pages
+   ========================================================== */
+
+.center-page {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+}
+
+
+.loading {
+  color: #555;
+}
+
+
+/* ==========================================================
+   Completion
+   ========================================================== */
+
+.completion-card {
+  width: 100%;
+
+  max-width: 500px;
+
+  padding: 40px;
+
+  background: white;
+
+  border: 1px solid #ddd;
+
+  border-radius: 12px;
+
+  text-align: center;
+}
+
+
+.completion-card h1 {
+  margin-bottom: 15px;
+}
+
+
+.completion-card p {
+  color: #666;
+
+  line-height: 1.6;
+}
+
+
+/* ==========================================================
+   Error Card
+   ========================================================== */
+
+.error-card {
+  width: 100%;
+
+  max-width: 500px;
+
+  padding: 30px;
+
+  background: white;
+
+  border: 1px solid #ddd;
+
+  border-radius: 12px;
+}
+
+
+/* ==========================================================
+   Mobile
+   ========================================================== */
+
+@media (max-width: 600px) {
+
+  .upload-card {
+    padding: 24px;
+  }
+
+
+  .question-card {
+    padding: 22px;
+  }
+
+
+  .question-text {
+    font-size: 19px;
+  }
+
+
+  .interview-page {
+    padding: 25px 15px;
+  }
+
+}
+
+
+/* ==========================================================
+   Interview Result
+   ========================================================== */
+
+.result-container {
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  padding: 40px 20px;
+}
+
+
+.result-card {
+  width: 100%;
+
+  max-width: 800px;
+
+  background: white;
+
+  border: 1px solid #ddd;
+
+  border-radius: 12px;
+
+  padding: 36px;
+}
+
+
+.result-card h1 {
+  margin-top: 0;
+
+  margin-bottom: 8px;
+}
+
+
+.result-subtitle {
+  color: #666;
+
+  margin-bottom: 30px;
+}
+
+
+/* ==========================================================
+   Overall
+   ========================================================== */
+
+.overall-section {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 24px;
+
+  background: #f5f6f8;
+
+  border-radius: 8px;
+
+  margin-bottom: 24px;
+}
+
+
+.result-label {
+  display: block;
+
+  color: #666;
+
+  font-size: 14px;
+
+  margin-bottom: 8px;
+}
+
+
+.overall-score {
+  font-size: 32px;
+}
+
+
+.overall-score span {
+  font-size: 16px;
+
+  color: #666;
+}
+
+
+/* ==========================================================
+   Individual Scores
+   ========================================================== */
+
+.scores {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 12px;
+
+  margin-bottom: 30px;
+}
+
+
+.score-item {
+  border: 1px solid #ddd;
+
+  border-radius: 8px;
+
+  padding: 16px;
+}
+
+
+.score-item span {
+  display: block;
+
+  font-size: 13px;
+
+  color: #666;
+
+  margin-bottom: 8px;
+}
+
+
+.score-item strong {
+  font-size: 20px;
+}
+
+
+/* ==========================================================
+   Result Sections
+   ========================================================== */
+
+.result-card section {
+  margin-top: 30px;
+}
+
+
+.result-card section h2 {
+  font-size: 18px;
+
+  margin-bottom: 12px;
+}
+
+
+.summary-text {
+  line-height: 1.7;
+
+  color: #444;
+}
+
+
+.result-card ul {
+  padding-left: 20px;
+}
+
+
+.result-card li {
+  margin-bottom: 8px;
+
+  line-height: 1.5;
+}
+
+
+/* ==========================================================
+   Mobile
+   ========================================================== */
+
+@media (max-width: 600px) {
+
+  .result-card {
+    padding: 24px;
+  }
+
+
+  .overall-section {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+
+  .scores {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ==========================================================
+   EVALUATION PAGE
+   ========================================================== */
+
+.evaluation-page {
+  min-height: 100vh;
+  background: #f7f8fa;
+  padding: 50px 20px;
+}
+
+
+/* ==========================================================
+   MAIN CONTAINER
+   ========================================================== */
+
+.evaluation-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+.evaluation-header {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+
+.evaluation-label {
+  display: inline-block;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  color: #6b7280;
+
+  margin-bottom: 8px;
+}
+
+
+.evaluation-header h1 {
+  margin: 0;
+
+  font-size: 30px;
+  font-weight: 700;
+
+  color: #111827;
+}
+
+
+.evaluation-header p {
+  margin: 10px 0 0;
+
+  font-size: 15px;
+
+  color: #6b7280;
+}
+
+
+/* ==========================================================
+   RESULT AREA
+   ========================================================== */
+
+.evaluation-result-wrapper {
+  width: 100%;
+}
+
+
+/* ==========================================================
+   LOADING
+   ========================================================== */
+
+.evaluation-loading {
+  width: 100%;
+  max-width: 500px;
+
+  margin: 120px auto;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  padding: 45px 30px;
+}
+
+
+.evaluation-loading h1 {
+  margin: 20px 0 8px;
+
+  font-size: 24px;
+
+  color: #111827;
+}
+
+
+.evaluation-loading p {
+  margin: 0;
+
+  color: #4b5563;
+
+  font-size: 15px;
+}
+
+
+.evaluation-loading span {
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 13px;
+
+  color: #9ca3af;
+}
+
+
+/* ==========================================================
+   LOADING SPINNER
+   ========================================================== */
+
+.loading-spinner {
+  width: 42px;
+  height: 42px;
+
+  margin: 0 auto;
+
+  border: 4px solid #e5e7eb;
+
+  border-top-color: #111827;
+
+  border-radius: 50%;
+
+  animation: evaluation-spin 0.8s linear infinite;
+}
+
+
+@keyframes evaluation-spin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* ==========================================================
+   ERROR
+   ========================================================== */
+
+.evaluation-error {
+  width: 100%;
+  max-width: 500px;
+
+  margin: 120px auto;
+
+  padding: 40px 30px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+}
+
+
+.error-icon {
+  width: 42px;
+  height: 42px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f3f4f6;
+
+  color: #111827;
+
+  font-size: 22px;
+
+  font-weight: 700;
+}
+
+
+.evaluation-error h1 {
+  margin: 0 0 10px;
+
+  font-size: 23px;
+
+  color: #111827;
+}
+
+
+.evaluation-error p {
+  margin: 0 0 24px;
+
+  color: #6b7280;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* ==========================================================
+   BUTTON
+   ========================================================== */
+
+.evaluation-button {
+  border: none;
+
+  background: #111827;
+
+  color: #ffffff;
+
+  padding: 11px 22px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.evaluation-button:hover {
+  background: #000000;
+
+  transform: translateY(-1px);
+}
+
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+.evaluation-footer {
+  margin-top: 24px;
+
+  padding: 22px 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+}
+
+
+.evaluation-footer p {
+  margin: 0;
+
+  font-size: 14px;
+
+  color: #6b7280;
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+  .evaluation-page {
+    padding: 25px 14px;
+  }
+
+
+  .evaluation-header {
+    padding: 24px;
+  }
+
+
+  .evaluation-header h1 {
+    font-size: 25px;
+  }
+
+
+  .evaluation-footer {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    text-align: center;
+  }
+
+
+  .evaluation-button {
+    width: 100%;
+  }
+
+}
