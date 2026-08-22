@@ -31,4 +31,3 @@ Backend/rag/create_vector_db.py
 
 Backend/candidate_screening.sql
 
-Backend/Dockerfile
