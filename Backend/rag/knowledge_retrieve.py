@@ -78,6 +78,11 @@ def retrieve_knowledge(
         key=lambda x: x[1]
     )
 
+
+
+    
+
+
     return [
         document
         for document, score in sorted_results
