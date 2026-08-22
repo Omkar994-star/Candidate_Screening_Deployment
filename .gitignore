@@ -23,5 +23,12 @@ Backend/uploads/*
 .vscode/
 
 #Knowledge_base
-.rag/knowledge_base/*
-.rag/create_vector_db.py
+Backend/rag/knowledge_base/*
+Backend/rag/create_vector_db.py
+
+
+
+
+Backend/candidate_screening.sql
+
+Backend/Dockerfile
