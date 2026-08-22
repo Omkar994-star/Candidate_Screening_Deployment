@@ -35,7 +35,7 @@ Instructions:
 1. Return ONLY valid JSON.
 2. No markdown.
 3. Cover all important topics.
-4. Only 20% questions on candidate context and resume data, 10% on role and 70% on retrieved knowledge.
+4. Only 20% questions on relevent candidate context and resume data with respect to role, 10% on exact role and 70% on retrieved knowledge.
 5. Give a mix of conceptual, coding, debugging, scenario and follow-up questions.
 6. Difficulty level should match the specified target role.
 

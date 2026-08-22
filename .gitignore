@@ -22,5 +22,6 @@ Backend/uploads/*
 .DS_Store
 .vscode/
 
-#rag-knowledge_base
-Backend/rag/knowledge_base
+#Knowledge_base
+.rag/knowledge_base/*
+.rag/create_vector_db.py
