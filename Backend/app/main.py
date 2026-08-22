@@ -1,5 +1,3 @@
-import os
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -13,44 +11,35 @@ app = FastAPI(
 )
 
 
-# ==========================================================
-# CORS
-# ==========================================================
-
-FRONTEND_URL = "https://keen-amazement-production-4f9b.up.railway.app"
-
 app.add_middleware(
     CORSMiddleware,
+
     allow_origins=[
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        FRONTEND_URL,
+        # Add your Vercel URL here later
+        # "https://your-project.vercel.app"
     ],
+
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# ==========================================================
-# Routers
-# ==========================================================
-
-app.include_router(
-    candidate_router
-)
-
-app.include_router(
-    evaluation.router
+    allow_headers=["*"]
 )
 
 
-# ==========================================================
-# Health Check
-# ==========================================================
+app.include_router(candidate_router)
+app.include_router(evaluation.router)
+
 
 @app.get("/")
 def health_check():
-
     return {
         "message": "AI Candidate Screening API is running"
+    }
+
+
+@app.get("/health")
+def health():
+    return {
+        "status": "healthy"
     }
