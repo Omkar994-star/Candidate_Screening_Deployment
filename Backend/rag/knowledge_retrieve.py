@@ -6,11 +6,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from app.core.screening_config import VECTOR_DB_ROOT
 
 
-# ============================================================
-# BGE-small embeddings
-# Must be the SAME model used to create the FAISS databases
-# ============================================================
-
+# Same model used when creating the FAISS vector database
 embeddings = HuggingFaceEmbeddings(
     model_name="BAAI/bge-small-en-v1.5",
     model_kwargs={
@@ -21,10 +17,6 @@ embeddings = HuggingFaceEmbeddings(
     }
 )
 
-
-# ============================================================
-# Load vector database for a role
-# ============================================================
 
 @lru_cache(maxsize=None)
 def get_vector_db(role: str) -> FAISS:
@@ -47,10 +39,6 @@ def get_vector_db(role: str) -> FAISS:
     )
 
 
-# ============================================================
-# Retrieve knowledge
-# ============================================================
-
 def retrieve_knowledge(
     search_queries,
     role: str,
@@ -59,15 +47,38 @@ def retrieve_knowledge(
 
     db = get_vector_db(role)
 
-    docs = []
+    unique_docs = {}
+    results_per_query = []
 
     for query in search_queries:
 
-        results = db.similarity_search(
+        results = db.similarity_search_with_score(
             query,
             k=k
         )
 
-        docs.extend(results)
+        results_per_query.extend(results)
 
-    return docs
+    # Remove duplicate chunks
+    for document, score in results_per_query:
+
+        content = document.page_content.strip()
+
+        # FAISS similarity_search_with_score:
+        # Lower score generally means more similar
+        if content not in unique_docs:
+            unique_docs[content] = (
+                document,
+                score
+            )
+
+    # Sort by relevance
+    sorted_results = sorted(
+        unique_docs.values(),
+        key=lambda x: x[1]
+    )
+
+    return [
+        document
+        for document, score in sorted_results
+    ]
