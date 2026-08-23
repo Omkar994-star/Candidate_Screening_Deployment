@@ -13,16 +13,14 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-
     allow_origins=[
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        "https://keen-amazement-production-4f9b.up.railway.app"
+        "https://keen-amazement-production-4f9b.up.railway.app",
     ],
-
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"]
+    allow_headers=["*"],
 )
 
 
