@@ -17,8 +17,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        # Add your Vercel URL here later
-        # "https://your-project.vercel.app"
+        "https://keen-amazement-production-4f9b.up.railway.app"
     ],
 
     allow_credentials=True,
