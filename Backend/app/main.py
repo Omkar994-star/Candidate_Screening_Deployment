@@ -17,6 +17,7 @@ app.add_middleware(
         "http://localhost:3000",
         "http://127.0.0.1:3000",
         "https://keen-amazement-production-4f9b.up.railway.app",
+        "https://ai-candidate-screening.up.railway.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
