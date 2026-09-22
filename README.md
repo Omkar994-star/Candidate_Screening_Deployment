@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-[Open AI Candidate Screening Application](https://keen-amazement-production-4f9b.up.railway.app)
+[Open AI Candidate Screening Application](https://ai-candidate-screening.up.railway.app/)
 
 This is a resume-driven technical interview application. A candidate selects a supported job role, uploads a PDF or TXT resume, answers generated interview questions, and receives an AI-generated evaluation.
 
