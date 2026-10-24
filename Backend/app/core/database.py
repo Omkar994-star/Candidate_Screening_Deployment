@@ -19,6 +19,13 @@ load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
+if DATABASE_URL and DATABASE_URL.startswith("postgresql+psycopg://"):
+    DATABASE_URL = DATABASE_URL.replace(
+        "postgresql+psycopg://",
+        "postgresql+psycopg2://",
+        1
+    )
+
 
 if not DATABASE_URL:
 
