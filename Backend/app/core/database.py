@@ -17,14 +17,32 @@ load_dotenv()
 # PostgreSQL connection
 # ==========================================================
 
+
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-if DATABASE_URL and DATABASE_URL.startswith("postgresql+psycopg://"):
+if not DATABASE_URL:
+    raise ValueError("DATABASE_URL is not set in the environment")
+
+# Use the installed psycopg2-binary driver
+DATABASE_URL = DATABASE_URL.replace(
+    "postgresql+psycopg://",
+    "postgresql+psycopg2://",
+    1
+)
+
+if DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace(
-        "postgresql+psycopg://",
+        "postgres://",
         "postgresql+psycopg2://",
         1
     )
+elif DATABASE_URL.startswith("postgresql://"):
+    DATABASE_URL = DATABASE_URL.replace(
+        "postgresql://",
+        "postgresql+psycopg2://",
+        1
+    )
+
 
 
 if not DATABASE_URL:
